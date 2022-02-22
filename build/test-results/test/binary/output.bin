@@ -1,0 +1,36 @@
+Request method:	POST
+3Request URI:	http://localhost:8089/api/fretes/novo
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+"				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "produto": "Recife",
+!    "dataEntrega": "2022-02-01",
+$    "localDeEntrega": "CB Barueri",
+    "dataColeta": "2022-02-01"
+}
+HTTP/1.1 201 
+1Location: http://localhost:8089/api/fretes/novo/
+-Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+$Date: Tue, 22 Feb 2022 19:13:23 GMT
+
+{
+    "data": {
+        "id": 3,
+(        "localDeEntrega": "CB Barueri",
+$        "dataColeta": "2022-02-01",
+%        "dataEntrega": "2022-02-01",
+        "produto": "Recife"
+    },
+    "errors": [
+	        
+    ]
+}
