@@ -10,7 +10,6 @@ import static org.hamcrest.Matchers.*;
 
 public class GerenciadorFretesResquests {
 
-
     @Test
     public void deveRealizarCadastroComSucesso(){
 
@@ -99,7 +98,7 @@ public class GerenciadorFretesResquests {
     }
 
     @Test
-    public void deve(){
+    public void naoDeveSuportarVerbosDiferentesDePost(){
         Map<String, Object> params = new HashMap<>();
         params.put("localDeEntrega","CB Barueri");
         params.put("dataColeta", "2022-02-01");
@@ -112,7 +111,7 @@ public class GerenciadorFretesResquests {
                 .when().log().all()
                 .put("http://localhost:8089/api/fretes/novo")
                 .then().log().all()
-                .statusCode(201);
+                .statusCode(405);
 
 
     }

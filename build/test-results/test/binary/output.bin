@@ -1,4 +1,4 @@
-Request method:	POST
+Request method:	PUT
 3Request URI:	http://localhost:8089/api/fretes/novo
 Proxy:			<none>
 Request params:	<none>
@@ -12,25 +12,21 @@
 Body:
 {
     "produto": "Notebook",
+!    "dataEntrega": "2022-02-01",
 $    "localDeEntrega": "CB Barueri",
-    "quantidade": 3,
-#    "transportadora": "transDiego"
+    "dataColeta": "2022-02-01"
 }
-HTTP/1.1 201 
-1Location: http://localhost:8089/api/fretes/novo/
+HTTP/1.1 405 
+Allow: POST, GET
 -Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-$Date: Wed, 23 Feb 2022 01:05:05 GMT
+$Date: Wed, 23 Feb 2022 16:58:45 GMT
 
 {
-    "data": {
-        "id": 2,
-(        "localDeEntrega": "CB Barueri",
-        "quantidade": 3,
-         "transportadora": null,
-        "produto": "Notebook"
-    },
-    "errors": [
-	        
-    ]
+     "timestamp": 1645635525224,
+    "status": 405,
+#    "error": "Method Not Allowed",
+S    "exception": "org.springframework.web.HttpRequestMethodNotSupportedException",
+5    "message": "Request method 'PUT' not supported",
+    "path": "/api/fretes/novo"
 }
