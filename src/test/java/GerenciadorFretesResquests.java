@@ -34,9 +34,9 @@ public class GerenciadorFretesResquests {
 
         Map<String, Object> params = new HashMap<>();
         params.put("localDeEntrega","AB");
-        params.put("dataColeta", "2022-02-01");
-        params.put("dataEntrega", "2022-02-01");
-        params.put("produto","Recife");
+        params.put("quantidade", 5);
+        params.put("transportadora", "TransRhuan");
+        params.put("produto","Notebook");
 
         given()
                 .contentType(ContentType.JSON)
@@ -49,11 +49,11 @@ public class GerenciadorFretesResquests {
     }
 
     @Test
-    public void naoDeveSerPossivelCadastrarSemDataColeta(){
+    public void naoDeveSerPossivelCadastrarSemQuantidade(){
         Map<String, Object> params = new HashMap<>();
-        params.put("localDeEntrega","ABc");
-        params.put("dataEntrega", "2022-02-01");
-        params.put("produto","Recife");
+        params.put("localDeEntrega","CB Barueri");
+        params.put("transportadora", "transDiego");
+        params.put("produto","Notebook");
 
         given()
                 .contentType(ContentType.JSON)
@@ -63,7 +63,7 @@ public class GerenciadorFretesResquests {
                 .then().log().all()
                 .statusCode(400)
                 .body("data", nullValue())
-                .body("errors[0]", equalTo("Data de Coleta é uma informação obrigatória"));
+                .body("errors[0]", equalTo("quantidade é uma informação obrigatória"));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class GerenciadorFretesResquests {
                 .when().log().all()
                 .get("http://localhost:8089/api/fretes/1")
                 .then().log().all()
-                .statusCode(400);
+                .statusCode(200);
     }
 
     @Test

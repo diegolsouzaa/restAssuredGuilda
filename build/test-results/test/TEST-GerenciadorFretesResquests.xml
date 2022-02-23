@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GerenciadorFretesResquests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-23T17:00:40" hostname="NI-INV3036" time="2.294">
+<testsuite name="GerenciadorFretesResquests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-23T17:06:58" hostname="NI-INV3036" time="1.135">
   <properties/>
-  <testcase name="deveRealizarCadastroComSucesso()" classname="GerenciadorFretesResquests" time="2.294"/>
-  <system-out><![CDATA[Request method:	POST
+  <testcase name="naoDeveSuportarVerbosDiferentesDePost()" classname="GerenciadorFretesResquests" time="1.135"/>
+  <system-out><![CDATA[Request method:	PUT
 Request URI:	http://localhost:8089/api/fretes/novo
 Proxy:			<none>
 Request params:	<none>
@@ -16,27 +16,23 @@ Multiparts:		<none>
 Body:
 {
     "produto": "Notebook",
+    "dataEntrega": "2022-02-01",
     "localDeEntrega": "CB Barueri",
-    "quantidade": 3,
-    "transportadora": "transDiego"
+    "dataColeta": "2022-02-01"
 }
-HTTP/1.1 201 
-Location: http://localhost:8089/api/fretes/novo/
+HTTP/1.1 405 
+Allow: POST, GET
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Wed, 23 Feb 2022 17:00:42 GMT
+Date: Wed, 23 Feb 2022 17:06:59 GMT
 
 {
-    "data": {
-        "id": 1,
-        "localDeEntrega": "CB Barueri",
-        "quantidade": 3,
-        "transportadora": null,
-        "produto": "Notebook"
-    },
-    "errors": [
-        
-    ]
+    "timestamp": 1645636019203,
+    "status": 405,
+    "error": "Method Not Allowed",
+    "exception": "org.springframework.web.HttpRequestMethodNotSupportedException",
+    "message": "Request method 'PUT' not supported",
+    "path": "/api/fretes/novo"
 }
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
