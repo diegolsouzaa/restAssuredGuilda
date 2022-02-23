@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RestAssureTestOne" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-22T19:13:21" hostname="NI-INV3036" time="2.398">
+<testsuite name="GerenciadorFretesResquests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-23T01:05:03" hostname="NI-INV3036" time="2.627">
   <properties/>
-  <testcase name="testeUm()" classname="RestAssureTestOne" time="2.398"/>
+  <testcase name="deveRealizarCadastroComSucesso()" classname="GerenciadorFretesResquests" time="2.627"/>
   <system-out><![CDATA[Request method:	POST
 Request URI:	http://localhost:8089/api/fretes/novo
 Proxy:			<none>
@@ -15,24 +15,24 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "produto": "Recife",
-    "dataEntrega": "2022-02-01",
+    "produto": "Notebook",
     "localDeEntrega": "CB Barueri",
-    "dataColeta": "2022-02-01"
+    "quantidade": 3,
+    "transportadora": "transDiego"
 }
 HTTP/1.1 201 
 Location: http://localhost:8089/api/fretes/novo/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Tue, 22 Feb 2022 19:13:23 GMT
+Date: Wed, 23 Feb 2022 01:05:05 GMT
 
 {
     "data": {
-        "id": 3,
+        "id": 2,
         "localDeEntrega": "CB Barueri",
-        "dataColeta": "2022-02-01",
-        "dataEntrega": "2022-02-01",
-        "produto": "Recife"
+        "quantidade": 3,
+        "transportadora": null,
+        "produto": "Notebook"
     },
     "errors": [
         
