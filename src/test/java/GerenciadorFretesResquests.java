@@ -45,7 +45,7 @@ public class GerenciadorFretesResquests {
                 .post("http://localhost:8089/api/fretes/novo")
                 .then().log().all()
                 .statusCode(400)
-                .body("errors[0]", equalTo("Local de Destino deve estar entre 3 e 40 caracteres"));
+                .body("errors[0]", equalTo("Local de Entrega deve estar entre 3 e 40 caracteres"));
     }
 
     @Test
@@ -112,8 +112,6 @@ public class GerenciadorFretesResquests {
                 .put("http://localhost:8089/api/fretes/novo")
                 .then().log().all()
                 .statusCode(405);
-
-
     }
 
 }
