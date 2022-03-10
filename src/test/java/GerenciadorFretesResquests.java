@@ -12,9 +12,8 @@ public class GerenciadorFretesResquests {
 
     @Test
     public void deveRealizarCadastroComSucesso(){
-
         Map<String, Object> params = new HashMap<>();
-        params.put("localDeEntrega","CB Barueri");
+        params.put("localDeEntrega", "CB Barueri");
         params.put("quantidade", 3);
         params.put("transportadora", "transDiego");
         params.put("produto","Notebook");
@@ -73,7 +72,8 @@ public class GerenciadorFretesResquests {
                 .when().log().all()
                 .get("http://localhost:8089/api/fretes")
                 .then().log().all()
-                .statusCode(200);
+                .statusCode(200)
+                .body("size()", greaterThan(1));
     }
 
     @Test
@@ -83,7 +83,9 @@ public class GerenciadorFretesResquests {
                 .when().log().all()
                 .get("http://localhost:8089/api/fretes/1")
                 .then().log().all()
-                .statusCode(200);
+                .statusCode(200)
+                .body("data.id", equalTo(1))
+                .body("data.quantidade", equalTo(3));
     }
 
     @Test
@@ -93,8 +95,9 @@ public class GerenciadorFretesResquests {
                 .when().log().all()
                 .get("http://localhost:8089/api/fretes/33")
                 .then().log().all()
-                .body("message", equalTo("Não existe esta viagem cadastrada"))
-                .statusCode(404);
+                .statusCode(404)
+                .body("message", equalTo("Não existe esta viagem cadastrada"));
+
     }
 
     @Test
