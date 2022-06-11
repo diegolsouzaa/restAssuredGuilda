@@ -1,3 +1,7 @@
+package requests;
+
+import entities.Frete;
+import factory.FreteDataFactory;
 import io.restassured.http.ContentType;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
@@ -29,17 +33,48 @@ public class GerenciadorFretesResquests {
     }
 
     @Test
-    public void naoDeveSerPossivelCadastrarLocalDeEntregaComMenosDeTresLetras(){
-
+    public void deveRealizarCadastroComSucessoParams(){
         Map<String, Object> params = new HashMap<>();
-        params.put("localDeEntrega","AB");
-        params.put("quantidade", 5);
-        params.put("transportadora", "TransRhuan");
+        params.put("localDeEntrega", "CB Barueri");
+        params.put("quantidade", 3);
+        params.put("transportadora", "transDiego");
         params.put("produto","Notebook");
 
         given()
                 .contentType(ContentType.JSON)
                 .body(params)
+                .when().log().all()
+                .post("http://localhost:8089/api/fretes/novo")
+                .then().log().all()
+                .statusCode(201)
+                .body("data.id", notNullValue());
+    }
+
+    @Test
+    public void deveRealizarCadastroComSucessoDataFactory(){
+
+        Frete freteValido = FreteDataFactory.criarFreteValido();
+
+        given()
+                .contentType(ContentType.JSON)
+                .body(freteValido)
+                .when().log().all()
+                .post("http://localhost:8089/api/fretes/novo")
+                .then().log().all()
+                .statusCode(201)
+                .body("data.id", notNullValue());
+
+    }
+
+    @Test
+    public void naoDeveSerPossivelCadastrarLocalDeEntregaComMenosDeTresLetras(){
+
+
+        Frete freteLocalDeEntregaMenosDeTresLetras = FreteDataFactory.criarFreteComLocalDeEntregaInvalido();
+
+        given()
+                .contentType(ContentType.JSON)
+                .body(freteLocalDeEntregaMenosDeTresLetras)
                 .when().log().all()
                 .post("http://localhost:8089/api/fretes/novo")
                 .then().log().all()
@@ -49,14 +84,12 @@ public class GerenciadorFretesResquests {
 
     @Test
     public void naoDeveSerPossivelCadastrarSemQuantidade(){
-        Map<String, Object> params = new HashMap<>();
-        params.put("localDeEntrega","CB Barueri");
-        params.put("transportadora", "transDiego");
-        params.put("produto","Notebook");
+
+        Frete freteSemQuantidade = FreteDataFactory.criarFreteSemQuantidade();
 
         given()
                 .contentType(ContentType.JSON)
-                .body(params)
+                .body(freteSemQuantidade)
                 .when().log().all()
                 .post("http://localhost:8089/api/fretes/novo")
                 .then().log().all()
@@ -84,8 +117,7 @@ public class GerenciadorFretesResquests {
                 .get("http://localhost:8089/api/fretes/1")
                 .then().log().all()
                 .statusCode(200)
-                .body("data.id", equalTo(1))
-                .body("data.quantidade", equalTo(3));
+                .body("data.id", equalTo(1));
     }
 
     @Test
