@@ -33,24 +33,6 @@ public class GerenciadorFretesResquests {
     }
 
     @Test
-    public void deveRealizarCadastroComSucessoParams(){
-        Map<String, Object> params = new HashMap<>();
-        params.put("localDeEntrega", "CB Barueri");
-        params.put("quantidade", 3);
-        params.put("transportadora", "transDiego");
-        params.put("produto","Notebook");
-
-        given()
-                .contentType(ContentType.JSON)
-                .body(params)
-                .when().log().all()
-                .post("http://localhost:8089/api/fretes/novo")
-                .then().log().all()
-                .statusCode(201)
-                .body("data.id", notNullValue());
-    }
-
-    @Test
     public void deveRealizarCadastroComSucessoDataFactory(){
 
         Frete freteValido = FreteDataFactory.criarFreteValido();
