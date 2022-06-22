@@ -3,7 +3,6 @@ package requests;
 import entities.Frete;
 import factory.FreteDataFactory;
 import io.restassured.http.ContentType;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,12 +11,13 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 
-public class GerenciadorFretesResquests {
+public class GerenciadorFretesRequests {
 
     @Test
     public void deveRealizarCadastroComSucesso(){
+
         Map<String, Object> params = new HashMap<>();
-        params.put("localDeEntrega", "CB Barueri");
+        params.put("localDeEntrega", "CD Barueri");
         params.put("quantidade", 3);
         params.put("transportadora", "transDiego");
         params.put("produto","Notebook");
@@ -29,11 +29,12 @@ public class GerenciadorFretesResquests {
                 .post("http://localhost:8089/api/fretes/novo")
                 .then().log().all()
                 .statusCode(201)
-                .body("data.id", notNullValue());
+                .body("data.transportadora", equalTo("transDiego"));
+
     }
 
     @Test
-    public void deveRealizarCadastroComSucessoDataFactory(){
+    public void deveRealizarCadastroCOmSucessoDataFactory(){
 
         Frete freteValido = FreteDataFactory.criarFreteValido();
 
@@ -44,7 +45,8 @@ public class GerenciadorFretesResquests {
                 .post("http://localhost:8089/api/fretes/novo")
                 .then().log().all()
                 .statusCode(201)
-                .body("data.id", notNullValue());
+                .body("data.id", notNullValue())
+                .body("data.transportadora", equalTo("transComunidade"));
 
     }
 

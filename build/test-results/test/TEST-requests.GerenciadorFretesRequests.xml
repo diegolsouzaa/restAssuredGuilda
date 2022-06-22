@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="requests.GerenciadorFretesRequests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-22T20:24:35" hostname="NI-INV3036" time="2.42">
+  <properties/>
+  <testcase name="devePesquisarTodosOsFretes()" classname="requests.GerenciadorFretesRequests" time="2.42"/>
+  <system-out><![CDATA[Request method:	GET
+Request URI:	http://localhost:8089/api/fretes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 22 Jun 2022 20:24:37 GMT
+
+[
+    {
+        "id": 1,
+        "localDeEntrega": "CB Barueri",
+        "quantidade": 3,
+        "transportadora": "transDiego",
+        "produto": "Notebook"
+    },
+    {
+        "id": 2,
+        "localDeEntrega": "CD Barueri",
+        "quantidade": 3,
+        "transportadora": "transDiego",
+        "produto": "Notebook"
+    },
+    {
+        "id": 3,
+        "localDeEntrega": "CD Barueri",
+        "quantidade": 3,
+        "transportadora": "transDiego",
+        "produto": "Notebook"
+    },
+    {
+        "id": 4,
+        "localDeEntrega": "CD Barueri",
+        "quantidade": 3,
+        "transportadora": "transDiego",
+        "produto": "Notebook"
+    },
+    {
+        "id": 5,
+        "localDeEntrega": "CD Barueri",
+        "quantidade": 3,
+        "transportadora": "transDiego",
+        "produto": "Notebook"
+    },
+    {
+        "id": 6,
+        "localDeEntrega": "Joao Pessoa",
+        "quantidade": 3,
+        "transportadora": "transComunidade",
+        "produto": "televisao"
+    },
+    {
+        "id": 7,
+        "localDeEntrega": "Joao Pessoa",
+        "quantidade": 3,
+        "transportadora": "transComunidade",
+        "produto": "televisao"
+    },
+    {
+        "id": 8,
+        "localDeEntrega": "Joao Pessoa",
+        "quantidade": 3,
+        "transportadora": "transComunidade",
+        "produto": "televisao"
+    }
+]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

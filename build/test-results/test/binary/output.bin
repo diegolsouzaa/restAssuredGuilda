@@ -13,364 +13,63 @@
 HTTP/1.1 200 
 -Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-$Date: Sat, 11 Jun 2022 18:50:25 GMT
+$Date: Wed, 22 Jun 2022 20:24:37 GMT
 
 [
     {
         "id": 1,
-(        "localDeEntrega": "Araraquara",
-        "quantidade": 2,
-         "transportadora": null,
+(        "localDeEntrega": "CB Barueri",
+        "quantidade": 3,
+(        "transportadora": "transDiego",
         "produto": "Notebook"
     },
     {
         "id": 2,
-(        "localDeEntrega": "CB Barueri",
+(        "localDeEntrega": "CD Barueri",
         "quantidade": 3,
-         "transportadora": null,
+(        "transportadora": "transDiego",
         "produto": "Notebook"
     },
     {
         "id": 3,
-(        "localDeEntrega": "CB Barueri",
+(        "localDeEntrega": "CD Barueri",
         "quantidade": 3,
-         "transportadora": null,
+(        "transportadora": "transDiego",
         "produto": "Notebook"
     },
     {
         "id": 4,
-(        "localDeEntrega": "CB Barueri",
+(        "localDeEntrega": "CD Barueri",
         "quantidade": 3,
-         "transportadora": null,
+(        "transportadora": "transDiego",
         "produto": "Notebook"
     },
     {
         "id": 5,
-(        "localDeEntrega": "CB Barueri",
+(        "localDeEntrega": "CD Barueri",
         "quantidade": 3,
-         "transportadora": null,
+(        "transportadora": "transDiego",
         "produto": "Notebook"
     },
     {
         "id": 6,
-(        "localDeEntrega": "CB Barueri",
+)        "localDeEntrega": "Joao Pessoa",
         "quantidade": 3,
-         "transportadora": null,
-        "produto": "Notebook"
+-        "transportadora": "transComunidade",
+        "produto": "televisao"
     },
     {
         "id": 7,
-(        "localDeEntrega": "Araraquara",
-        "quantidade": 2,
-         "transportadora": null,
-        "produto": "Notebook"
+)        "localDeEntrega": "Joao Pessoa",
+        "quantidade": 3,
+-        "transportadora": "transComunidade",
+        "produto": "televisao"
     },
     {
         "id": 8,
-(        "localDeEntrega": "CB Barueri",
+)        "localDeEntrega": "Joao Pessoa",
         "quantidade": 3,
-         "transportadora": null,
-        "produto": "Notebook"
-    },
-    {
-        "id": 9,
-(        "localDeEntrega": "CB Barueri",
-        "quantidade": 3,
-         "transportadora": null,
-        "produto": "Notebook"
-    },
-    {
-        "id": 10,
-(        "localDeEntrega": "Araraquara",
-        "quantidade": 2,
-         "transportadora": null,
-        "produto": "Notebook"
+-        "transportadora": "transComunidade",
+        "produto": "televisao"
     }
 ]
-Request method:	POST
-3Request URI:	http://localhost:8089/api/fretes/novo
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-"				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-     "localDeEntrega": "Recife",
-    "quantidade": null,
-,    "transportadora": "Trans Praia Grande",
-    "produto": "Laranja cravo"
-}
-HTTP/1.1 400 
--Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-$Date: Sat, 11 Jun 2022 18:50:29 GMT
-Connection: close
-
-{
-    "data": null,
-    "errors": [
-6        "quantidade é uma informação obrigatória"
-    ]
-}
-Request method:	POST
-3Request URI:	http://localhost:8089/api/fretes/novo
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-"				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "produto": "Notebook",
-$    "localDeEntrega": "CB Barueri",
-    "quantidade": 3,
-#    "transportadora": "transDiego"
-}
-HTTP/1.1 201 
-1Location: http://localhost:8089/api/fretes/novo/
--Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-$Date: Sat, 11 Jun 2022 18:50:29 GMT
-
-{
-    "data": {
-        "id": 11,
-(        "localDeEntrega": "CB Barueri",
-        "quantidade": 3,
-         "transportadora": null,
-        "produto": "Notebook"
-    },
-    "errors": [
-	        
-    ]
-}
-Request method:	GET
-1Request URI:	http://localhost:8089/api/fretes/33
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-"				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 500 
--Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-$Date: Sat, 11 Jun 2022 18:50:29 GMT
-Connection: close
-
-{
-     "timestamp": 1654973429951,
-    "status": 500,
-&    "error": "Internal Server Error",
-(    "exception": "java.lang.Exception",
-5    "message": "Não existe esta viagem cadastrada",
-    "path": "/api/fretes/33"
-}
-Request method:	POST
-3Request URI:	http://localhost:8089/api/fretes/novo
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-"				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "produto": "Notebook",
-$    "localDeEntrega": "CB Barueri",
-    "quantidade": 3,
-#    "transportadora": "transDiego"
-}
-HTTP/1.1 201 
-1Location: http://localhost:8089/api/fretes/novo/
--Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-$Date: Sat, 11 Jun 2022 18:50:29 GMT
-
-{
-    "data": {
-        "id": 12,
-(        "localDeEntrega": "CB Barueri",
-        "quantidade": 3,
-         "transportadora": null,
-        "produto": "Notebook"
-    },
-    "errors": [
-	        
-    ]
-}
-Request method:	POST
-3Request URI:	http://localhost:8089/api/fretes/novo
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-"				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-$    "localDeEntrega": "Araraquara",
-    "quantidade": 2,
--    "transportadora": "Trans Comunidade QA",
-    "produto": "Notebook"
-}
-HTTP/1.1 201 
-1Location: http://localhost:8089/api/fretes/novo/
--Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-$Date: Sat, 11 Jun 2022 18:50:29 GMT
-
-{
-    "data": {
-        "id": 13,
-(        "localDeEntrega": "Araraquara",
-        "quantidade": 2,
-         "transportadora": null,
-        "produto": "Notebook"
-    },
-    "errors": [
-	        
-    ]
-}
-Request method:	GET
-0Request URI:	http://localhost:8089/api/fretes/1
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-"				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 200 
--Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-$Date: Sat, 11 Jun 2022 18:50:29 GMT
-
-{
-    "data": {
-        "id": 1,
-(        "localDeEntrega": "Araraquara",
-        "quantidade": 2,
-         "transportadora": null,
-        "produto": "Notebook"
-    },
-    "errors": [
-	        
-    ]
-}
-	Request method:	POST
-	3Request URI:	http://localhost:8089/api/fretes/novo
-	Proxy:			<none>
-	Request params:	<none>
-	Query params:	<none>
-	Form params:	<none>
-	Path params:	<none>
-	Headers:		Accept=*/*
-	"				Content-Type=application/json
-	Cookies:		<none>
-	Multiparts:		<none>
-	Body:
-	{
-	    "localDeEntrega": "AB",
-	    "quantidade": 3,
-	-    "transportadora": "Trans Comunidade QA",
-	    "produto": "Notebook"
-	}
-	HTTP/1.1 400 
-	-Content-Type: application/json;charset=UTF-8
-	Transfer-Encoding: chunked
-	$Date: Sat, 11 Jun 2022 18:50:29 GMT
-	Connection: close
-	
-	{
-	    "data": null,
-	    "errors": [
-	>        "Local de Entrega deve estar entre 3 e 40 caracteres"
-	    ]
-	}
-
-Request method:	PUT
-
-3Request URI:	http://localhost:8089/api/fretes/novo
-
-Proxy:			<none>
-
-Request params:	<none>
-
-Query params:	<none>
-
-Form params:	<none>
-
-Path params:	<none>
-
-Headers:		Accept=*/*
-
-"				Content-Type=application/json
-
-Cookies:		<none>
-
-Multiparts:		<none>
-
-Body:
-
-{
-
-    "produto": "Notebook",
-
-!    "dataEntrega": "2022-02-01",
-
-$    "localDeEntrega": "CB Barueri",
-
-    "dataColeta": "2022-02-01"
-
-}
-
-HTTP/1.1 405 
-
-Allow: GET, POST
-
--Content-Type: application/json;charset=UTF-8
-
-Transfer-Encoding: chunked
-
-$Date: Sat, 11 Jun 2022 18:50:29 GMT
-
-
-
-{
-
-     "timestamp": 1654973430369,
-
-    "status": 405,
-
-#    "error": "Method Not Allowed",
-
-S    "exception": "org.springframework.web.HttpRequestMethodNotSupportedException",
-
-5    "message": "Request method 'PUT' not supported",
-
-    "path": "/api/fretes/novo"
-
-}

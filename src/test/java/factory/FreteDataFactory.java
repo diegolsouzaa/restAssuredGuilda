@@ -6,14 +6,13 @@ public class FreteDataFactory {
 
     public static Frete criarFreteValido(){
 
-        Frete freteValido = new Frete();
-        freteValido.setLocalDeEntrega("Araraquara");
-        freteValido.setProduto("Notebook");
-        freteValido.setQuantidade(2);
-        freteValido.setTransportadora("Trans Comunidade QA");
+        Frete frete = new Frete();
+        frete.setTransportadora("transComunidade");
+        frete.setProduto("televisao");
+        frete.setQuantidade(3);
+        frete.setLocalDeEntrega("Joao Pessoa");
 
-        return freteValido;
-
+        return frete;
     }
 
     public static Frete criarFreteComLocalDeEntregaInvalido(){
